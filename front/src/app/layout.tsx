@@ -3,6 +3,7 @@ import { Jost, Noto_Sans_JP } from "next/font/google";
 import "destyle.css";
 import "@/styles/globals.scss";
 import Header from "@/components/context/header/Header";
+import Footer from "@/components/context/footer/Footer";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -1,0 +1,21 @@
+.footer {
+  background-color: var(--color-bg-blue);
+  @include pc() {
+    display: grid;
+    place-items: center;
+    padding: fluidPc(30) 0;
+  }
+}
+
+.footerCopyright {
+  text-align: center;
+  font-size: fluidSp(11);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-14);
+  font-family: var(--font-jost);
+  color: var(--color-text-black);
+
+  @include pc() {
+    font-size: fluidPc(12);
+  }
+}
