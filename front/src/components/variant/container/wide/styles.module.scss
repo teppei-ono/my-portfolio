@@ -1,0 +1,11 @@
+.containerWide {
+  width: 100%;
+  padding-left: fluidSp(15);
+  padding-right: fluidSp(15);
+
+  @include pc() {
+    padding-left: fluidPc(60);
+    padding-right: fluidPc(60);
+    margin-inline: auto;
+  }
+}

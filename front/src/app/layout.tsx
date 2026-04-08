@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Jost, Noto_Sans_JP } from "next/font/google";
 import "destyle.css";
 import "@/styles/globals.scss";
+import Header from "@/components/context/header/Header";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -28,7 +29,10 @@ export default function RootLayout({
       lang="ja"
       className={`${notoSansJP.variable} ${jost.variable}antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

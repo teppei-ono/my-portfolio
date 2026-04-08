@@ -7,6 +7,22 @@
   --color-text-black: #131B2E;
   --color-text-black-dark: #000000;
 
+  /* font-weight */
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+
+  /* line-height */
+  --line-height-10: 1;
+  --line-height-14: 1.4;
+  --line-height-15: 1.5;
+  --line-height-16: 1.6;
+  --line-height-18: 1.8;
+  --line-height-20: 2;
 }
 
 body {
@@ -35,4 +51,16 @@ img {
 
 b, strong {
   font-weight: inherit;
+}
+
+.isPc {
+  @include sp() {
+    display: none;
+  }
+}
+
+.isSp {
+  @include pc() {
+    display: none;
+  }
 }

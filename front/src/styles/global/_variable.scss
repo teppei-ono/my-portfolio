@@ -12,30 +12,30 @@ $containerXl: 1440;
 
   // 通常クラス（spファースト。PCはmixinで上書き）
   .mt-#{$size} {
-    margin-top: f.changeRem($size);
+    margin-top: f.fluidSp($size);
 
     @include m.pc() {
-      margin-top: f.minPc($size);
+      margin-top: f.fluidPc($size);
     }
   }
   .ml-#{$size} {
-    margin-left: f.changeRem($size);
+    margin-left: f.fluidSp($size);
 
     @include m.pc() {
-      margin-left: f.minPc($size);
+      margin-left: f.fluidPc($size);
     }
   }
 
   // sp専用
   .mt-#{$size}-sp {
-    margin-top: f.changeRem($size);
+    margin-top: f.fluidSp($size);
 
     @include m.pc() {
       margin-top: initial; // もしくはunset
     }
   }
   .ml-#{$size}-sp {
-    margin-left: f.changeRem($size);
+    margin-left: f.fluidSp($size);
 
     @include m.pc() {
       margin-left: initial; // もしくはunset
@@ -45,12 +45,12 @@ $containerXl: 1440;
   // pc専用
   .mt-#{$size}-pc {
     @include m.pc() {
-      margin-top: f.minPc($size);
+      margin-top: f.fluidPc($size);
     }
   }
   .ml-#{$size}-pc {
     @include m.pc() {
-      margin-left: f.minPc($size);
+      margin-left: f.fluidPc($size);
     }
   }
 }

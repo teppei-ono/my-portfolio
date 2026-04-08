@@ -1,0 +1,52 @@
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  @include pc() {
+    display: flex;
+    align-items: center;
+    height: fluidPc(100);
+    padding: fluidPc(20) 0;
+  }
+}
+
+.headerContainer {
+  height: 100%;
+}
+
+.headerContent {
+  @include pc() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: fluidPc(20);
+  }
+}
+
+.headerLogoLink {
+  display: block;
+
+  @include pc() {
+    width: fluidPc(130);
+    height: fluidPc(42);
+  }
+}
+
+/* headerPc */
+
+.headerPcNavList {
+  @include pc() {
+    display: flex;
+    align-items: center;
+    gap: fluidPc(20);
+    font-size: fluidPc(20);
+    font-weight: var(--font-weight-500);
+    line-height: var(--line-height-14);
+    font-family: var(--font-jost);
+    color: var(--color-text-black);
+  }
+}
