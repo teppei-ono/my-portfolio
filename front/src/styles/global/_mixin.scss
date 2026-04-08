@@ -1,0 +1,50 @@
+@use 'sass:map';
+@use './function' as *;
+
+// breakpoints
+$breakpoints: (
+  sp-min: 500px,
+  sp-max: 959.98px,
+  pc-min: 960px,
+  pc-max: 1440px,
+  wide: 1441px,
+);
+
+@mixin pc {
+  @media screen and (min-width: map.get($breakpoints, pc-min)) {
+    @content;
+  }
+}
+
+@mixin pc-wide {
+  @media screen and (min-width: map.get($breakpoints, wide)) {
+    @content;
+  }
+}
+
+@mixin pc-range {
+  @media screen and (min-width: map.get($breakpoints, pc-min)) and (max-width: map.get($breakpoints, pc-max)) {
+    @content;
+  }
+}
+
+@mixin sp-range {
+  @media screen and (max-width: map.get($breakpoints, sp-max)) and (min-width: map.get($breakpoints, sp-min)) {
+    @content;
+  }
+}
+
+@mixin sp() {
+  @media screen and (max-width: map.get($breakpoints, sp-max)) {
+    @content;
+  }
+}
+
+// 500px以下で何かしら設定をした場合
+@mixin sp-mobile($fixed-mobile: null) {
+  @if $fixed-mobile != null {
+    @media screen and (max-width: #{map.get($breakpoints, sp-min)}) {
+      @content;
+    }
+  }
+}

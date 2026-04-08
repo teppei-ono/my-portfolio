@@ -1,0 +1,90 @@
+@use 'sass:math';
+
+/// --------------------------------------------
+/// SP用関数（1440px基準）
+/// 960px以下はsp関数で制御するので考慮不要
+/// 1440px未満では縮小、1440px以上では拡大
+/// --------------------------------------------
+@function fluidSp(
+  $size,
+  $min-width: 320,
+  $base-width: 390,
+  $max-width: 960,
+  $scale-min: 0.6, // 320px時の縮小率
+  $scale-max: 1.4, // 768px時の拡大率
+) {
+  // 3点の目標値
+  $min-size: $size * $scale-min; // 320px
+  $base-size: $size; // 390px
+  $max-size: $size * $scale-max; // 959px
+
+  // 線形関数：y = a*vw + b （vwは%扱いなので *100 する）
+  // 320–390（sp）
+  $a-sp: math.div(($base-size - $min-size), ($base-width - $min-width)) * 100;
+  $b-sp: $min-size - $a-sp * math.div($min-width, 100);
+
+  // 390–959（sp-md）
+  $a-pc: math.div(($max-size - $base-size), ($max-width - $base-width)) * 100;
+  $b-pc: $base-size - $a-pc * math.div($base-width, 100);
+
+  // 合成：
+  //  clamp(min, sp, base) + clamp(base, pc, max) - base
+  //  → 320–390はspが生き、390–959はpcが生き、上下も綺麗に飽和
+  @return calc(
+    clamp(#{$min-size}px, calc(#{$b-sp}px + #{$a-sp}vw), #{$base-size}px)
+      + clamp(#{$base-size}px, calc(#{$b-pc}px + #{$a-pc}vw), #{$max-size}px)
+      - #{$base-size}px
+  );
+}
+
+/// --------------------------------------------
+/// PC用関数（1440px基準）
+/// 960px以下はsp関数で制御するので考慮不要
+/// 960px〜1440pxの間だけ可変、1440px以上は固定値（rem）
+/// --------------------------------------------
+@function fluidPc(
+  $size,
+  $min-width: 768,
+  $max-width: 1440,
+  $base-font-size: 16,
+) {
+  // rem換算値（1440px時点の固定値）
+  $rem-size: math.div($size, $base-font-size) * 1rem;
+
+  // 下限(960px時点)のpx値
+  $min-value: math.div($size * $min-width, $max-width);
+
+  // 可変部分の式（vwベース）
+  $slope: math.div(($size - $min-value), ($max-width - $min-width)) * 100;
+  $intercept: $min-value - ($slope * math.div($min-width, 100));
+
+  // clampで制御
+  @return clamp(
+    #{math.div($min-value, $base-font-size)}rem,
+    // 下限: 960px時点
+    #{$intercept}px + #{$slope}vw,
+    // 可変範囲
+    #{$rem-size} // 上限: 1440px時点（固定）
+  );
+}
+
+@function fluidPcWide(
+  $size,
+  $min-width: 1440,
+  $max-width: 1920,
+  $scale: 1.4,
+  $base-font-size: 16,
+) {
+  // 1440px時点（下限）
+  $min-value: $size;
+  // 1920px時点（上限）
+  $max-value: $size * $scale;
+  // vwベースの一次式
+  $slope: math.div(($max-value - $min-value), ($max-width - $min-width)) * 100;
+  $intercept: $min-value - ($slope * math.div($min-width, 100));
+  @return clamp(
+    #{math.div($min-value, $base-font-size)}rem,
+    #{$intercept}px + #{$slope}vw,
+    #{math.div($max-value, $base-font-size)}rem
+  );
+}

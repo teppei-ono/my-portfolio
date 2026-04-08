@@ -1,0 +1,38 @@
+:root {
+  /* color */
+  --color-base: #ffffff;
+  --color-primary: #004AC6;
+  --color-secondary: #BC4800;
+
+  --color-text-black: #131B2E;
+  --color-text-black-dark: #000000;
+
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-text-black);
+  font-family: var(--font-noto-sans-jp), sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+b, strong {
+  font-weight: inherit;
+}

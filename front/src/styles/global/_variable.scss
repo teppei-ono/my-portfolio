@@ -1,0 +1,66 @@
+@use './mixin' as m;
+@use './function' as f;
+// container
+$containerSm: 920;
+$containerMd: 1040;
+$containerLg: 1280;
+$containerXl: 1440;
+
+// utility
+@for $i from 0 through 100 {
+  $size: $i;
+
+  // 通常クラス（spファースト。PCはmixinで上書き）
+  .mt-#{$size} {
+    margin-top: f.changeRem($size);
+
+    @include m.pc() {
+      margin-top: f.minPc($size);
+    }
+  }
+  .ml-#{$size} {
+    margin-left: f.changeRem($size);
+
+    @include m.pc() {
+      margin-left: f.minPc($size);
+    }
+  }
+
+  // sp専用
+  .mt-#{$size}-sp {
+    margin-top: f.changeRem($size);
+
+    @include m.pc() {
+      margin-top: initial; // もしくはunset
+    }
+  }
+  .ml-#{$size}-sp {
+    margin-left: f.changeRem($size);
+
+    @include m.pc() {
+      margin-left: initial; // もしくはunset
+    }
+  }
+
+  // pc専用
+  .mt-#{$size}-pc {
+    @include m.pc() {
+      margin-top: f.minPc($size);
+    }
+  }
+  .ml-#{$size}-pc {
+    @include m.pc() {
+      margin-left: f.minPc($size);
+    }
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-pc-center {
+  @include m.pc() {
+    text-align: center;
+  }
+}
