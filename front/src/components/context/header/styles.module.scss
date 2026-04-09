@@ -15,10 +15,14 @@
 }
 
 .headerContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
   height: 100%;
 }
 
 .headerContent {
+  width: 100%;
   @include pc() {
     display: flex;
     align-items: center;
@@ -43,7 +47,7 @@
     display: flex;
     align-items: center;
     gap: fluidPc(20);
-    font-size: fluidPc(20);
+    font-size: fluidPc(18);
     font-weight: var(--font-weight-500);
     line-height: var(--line-height-14);
     font-family: var(--font-jost);

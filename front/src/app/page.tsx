@@ -1,9 +1,10 @@
-import Image from "next/image";
+import Hero from "./_components/Hero";
+import ContentsWrapper from "@/components/context/contentsWrapper/ContentsWrapper";
 
 export default function Home() {
   return (
-    <div>
-      <h1>TOPページ</h1>
-    </div>
+    <ContentsWrapper>
+      <Hero />
+    </ContentsWrapper>
   );
 }

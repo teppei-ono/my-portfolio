@@ -1,0 +1,54 @@
+// Hero
+.hero {
+  @include pc() {
+    height: fluidPc(540);
+    padding-top: fluidPc(70);
+  }
+}
+
+.heroContent {
+  @include pc() {
+    display: grid;
+    place-items: center;
+  }
+}
+
+.heroTitle {
+  font-size: fluidSp(24);
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-14);
+  font-family: var(--font-jost);
+  color: var(--color-text-black);
+
+  @include pc() {
+    font-size: fluidPc(70);
+  }
+}
+
+.heroSubtitle {
+  font-size: fluidSp(18);
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-14);
+  font-family: var(--font-noto-sans-jp);
+  color: var(--color-text-primary);
+  margin-top: fluidSp(10);
+
+  @include pc() {
+    font-size: fluidPc(24);
+    margin-top: fluidPc(20);
+  }
+}
+
+.heroDescription {
+  font-size: fluidSp(16);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-16);
+  font-family: var(--font-noto-sans-jp);
+  color: var(--color-text-black);
+  margin-top: fluidSp(10);
+
+  @include pc() {
+    font-size: fluidPc(18);
+    margin-top: fluidPc(10);
+  }
+}

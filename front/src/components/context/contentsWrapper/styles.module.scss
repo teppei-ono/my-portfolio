@@ -1,0 +1,6 @@
+.contentsWrapper {
+  margin-top: fluidSp(60);
+  @include pc() {
+    margin-top: fluidPc(100);
+  }
+}

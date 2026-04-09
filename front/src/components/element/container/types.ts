@@ -19,7 +19,7 @@ export type ContainerWideProps = ContainerBaseProps & {
 };
 
 export type ContainerLowerProps = ContainerBaseProps & {
-  variant: "loewr";
+  variant: "lower";
 };
 
 // Container が受け取る型（ここが肝）
