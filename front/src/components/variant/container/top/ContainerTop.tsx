@@ -1,7 +1,7 @@
 import type { ContainerTopProps } from "@/components/element/container/types";
 import styles from "./styles.module.scss";
 
-export default function ContainerTop({ className, children, ...rest }: ContainerTopProps) {
+export default function ContainerTop({ className, children, variant, ...rest }: ContainerTopProps) {
   return (
     <div
       {...rest}

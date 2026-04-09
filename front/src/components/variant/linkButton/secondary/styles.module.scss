@@ -1,0 +1,24 @@
+.linkButtonSecondary {
+  display: grid;
+  place-items: center;
+  background-color: var(--color-bg-light-blue);
+  border: fluidSp(1) solid var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border-radius: fluidSp(4);
+  padding: fluidSp(16) fluidSp(20);
+  font-size: fluidSp(15);
+  font-weight: var(--font-weight-600);
+  line-height: var(--line-height-16);
+  max-width: fluidSp(320);
+  width: 100%;
+  @include pc() {
+    transition: all 0.3s ease;
+    font-size: fluidPc(16);
+    max-width: fluidPc(360);
+    width: initial;
+    &:hover {
+      background-color: var(--color-bg-primary);
+      color: var(--color-text-white);
+    }
+  }
+}

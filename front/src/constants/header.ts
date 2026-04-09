@@ -11,7 +11,7 @@ export const HEADER_TOP_NAV_LIST = [
   },
   {
     label: "WORKS",
-    href: ROUTES.WORKS,
+    href: ROUTES.WORKSTOP,
   },
   {
     label: "BLOG",

@@ -52,3 +52,17 @@
     margin-top: fluidPc(10);
   }
 }
+
+.heroButtonWrapper {
+  @include pc() {
+    display: flex;
+    gap: fluidPc(20);
+    margin-top: fluidPc(40);
+  }
+}
+
+.heroButton {
+  @include pc() {
+    min-width: fluidPc(240);
+  }
+}
