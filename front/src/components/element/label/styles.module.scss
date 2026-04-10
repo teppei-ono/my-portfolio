@@ -1,0 +1,40 @@
+.label {
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  padding: fluidSp(4) fluidSp(22) fluidSp(5);
+  border-radius: fluidSp(18);
+  background-color: var(--color-bg-white);
+  border: fluidSp(1) solid var(--color-border-primary);
+  color: var(--color-text-primary);
+  font-size: fluidSp(11);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-family-noto-sans-jp);
+  line-height: 1;
+
+  @include pc() {
+    padding: fluidPc(4) fluidPc(22) fluidPc(5);
+    border-radius: fluidPc(18);
+    border: fluidPc(1) solid var(--color-border-primary);
+    font-size: fluidPc(10);
+  }
+
+  &.sm {
+    font-size: fluidPc(11);
+    @include pc() {
+      font-size: fluidPc(11);
+    }
+  }
+  &.md {
+    font-size: fluidPc(12);
+    @include pc() {
+      font-size: fluidPc(12);
+    }
+  }
+  &.lg {
+    font-size: fluidPc(13);
+    @include pc() {
+      font-size: fluidPc(13);
+    }
+  }
+}

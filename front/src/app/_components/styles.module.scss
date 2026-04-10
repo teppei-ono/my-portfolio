@@ -148,3 +148,23 @@
   height: 100%;
   object-fit: cover;
 }
+
+// Works
+.works {
+  @include pc() {
+    padding-top: fluidPc(80);
+    padding-bottom: fluidPc(80);
+  }
+}
+
+.worksList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: fluidSp(20);
+  margin-top: fluidSp(30);
+  @include pc() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluidPc(20);
+    margin-top: fluidPc(40);
+  }
+}

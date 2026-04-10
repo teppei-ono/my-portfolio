@@ -1,0 +1,53 @@
+.media {
+  border-radius: fluidSp(8);
+  overflow: hidden;
+  aspect-ratio: 11 / 6;
+  @include pc() {
+    border-radius: fluidPc(8);
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include pc() {
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+.labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: fluidSp(10);
+  margin-top: fluidSp(15);
+  @include pc() {
+    gap: fluidPc(10);
+    margin-top: fluidPc(15);
+  }
+}
+
+.title {
+  font-size: fluidSp(17);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-14);
+  font-family: var(--font-family-noto-sans-jp);
+  color: var(--color-text-black);
+  margin-top: fluidSp(10);
+  @include pc() {
+    font-size: fluidPc(18);
+    margin-top: fluidPc(10);
+  }
+}
+
+.linkMedia {
+  display: block;
+  @include pc() {
+    &:hover {
+      .media > img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
