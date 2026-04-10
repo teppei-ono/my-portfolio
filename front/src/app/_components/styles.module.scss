@@ -322,3 +322,72 @@
     margin-top: fluidPc(10);
   }
 }
+
+// Blog
+.blog {
+  position: relative;
+  @include pc() {
+    padding-top: fluidPc(80);
+    padding-bottom: fluidPc(80);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-white);
+    opacity: 0.7;
+    z-index: 1;
+  }
+}
+
+.blogInner {
+  position: relative;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.blogDescription {
+  font-size: fluidSp(16);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-16);
+  font-family: var(--font-noto-sans-jp);
+  color: var(--color-text-black);
+  margin-top: fluidSp(20);
+  @include pc() {
+    font-size: fluidPc(17);
+    margin-top: fluidPc(30);
+  }
+}
+
+.blogList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: fluidSp(20);
+  margin-top: fluidSp(30);
+  @include pc() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluidPc(20);
+    margin-top: fluidPc(40);
+  }
+}
+
+.blogVideo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  @include pc() {
+    width: 100%;
+    height: 100%;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

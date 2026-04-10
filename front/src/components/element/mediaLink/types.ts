@@ -6,7 +6,7 @@ export type MediaLinkProps = {
   imageSrc: string;
   imageAlt: string;
 
-  labels: LabelItem[];
+  labels?: LabelItem[];
 
   title: React.ReactNode;
 

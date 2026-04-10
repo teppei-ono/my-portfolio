@@ -20,14 +20,15 @@ function MediaLinkInner({ imageSrc, imageAlt, labels, title }: MediaLinkProps) {
       </div>
 
       <div className={styles.body}>
-        <ul className={styles.labels}>
-          {labels.map((label) => (
-            <li key={label.text}>
-              <Label text={label.text} size={label.size} />
-            </li>
-          ))}
-        </ul>
-
+        {labels && (
+          <ul className={styles.labels}>
+            {labels?.map((label) => (
+              <li key={label.text}>
+                <Label text={label.text} size={label.size} />
+              </li>
+            ))}
+          </ul>
+        )}
         <p className={styles.title}>{title}</p>
       </div>
     </>
