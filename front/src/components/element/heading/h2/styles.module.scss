@@ -1,0 +1,34 @@
+.headingH2 {
+  font-size: fluidSp(32);
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-14);
+  font-family: var(--font-family-noto-sans-jp);
+  position: relative;
+
+  @include pc() {
+    font-size: fluidPc(24);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: fluidSp(4);
+    left: 0;
+    width: fluidSp(30);
+    height: fluidSp(4);
+    background-color: var(--color-bg-primary);
+
+    @include pc() {
+      width: fluidPc(48);
+      height: fluidPc(4);
+      bottom: fluidPc(4);
+    }
+  }
+  
+  &.headingH2--en {
+    font-size: fluidSp(32);
+    font-family: var(--font-family-jost);
+    @include pc() {
+      font-size: fluidPc(42);
+    }
+  }
+}

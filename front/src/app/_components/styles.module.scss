@@ -66,3 +66,85 @@
     min-width: fluidPc(240);
   }
 }
+
+// About
+.about {
+  position: relative;
+}
+
+.aboutContent {
+  @include pc() {
+    position: relative;
+    z-index: 1;
+    padding-top: fluidPc(80);
+    padding-bottom: fluidPc(80);
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 70%;
+    height: 100%;
+    pointer-events: none;
+    // 背景をぼかす（Figma blur=35 相当）
+    backdrop-filter: blur(2em);
+    filter: blur(2em);
+    // ブラーの効き具合を左→右でフェードアウト（1→0）
+    mask-image: linear-gradient(
+      to right,
+      rgb(255 255 255 / 100%) 0%,
+      rgb(255 255 255 / 95%) 10%,
+      rgb(255 255 255 / 80%) 20%,
+      rgb(255 255 255 / 55%) 35%,
+      rgb(255 255 255 / 30%) 50%,
+      rgb(255 255 255 / 12%) 65%,
+      rgb(255 255 255 / 4%) 80%,
+      rgb(255 255 255 / 0%) 100%
+    );
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* 0%: #fff 100% → 100%: #fff 0% */
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+.aboutContentContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.aboutContentText {
+  font-size: fluidSp(16);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-20);
+  font-family: var(--font-noto-sans-jp);
+  color: var(--color-text-black);
+  margin-top: fluidSp(30);
+
+  @include pc() {
+    font-size: fluidPc(17);
+    margin-top: fluidPc(30);
+  }
+}
+
+.aboutMovie {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.aboutMovieVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
