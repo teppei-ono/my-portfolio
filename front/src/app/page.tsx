@@ -1,6 +1,7 @@
 import Hero from "./_components/Hero";
 import About from "./_components/About";
 import Works from "./_components/Works";
+import Skills from "./_components/Skills";
 import ContentsWrapper from "@/components/context/contentsWrapper/ContentsWrapper";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <About />
       <Works />
+      <Skills />
     </ContentsWrapper>
   );
 }

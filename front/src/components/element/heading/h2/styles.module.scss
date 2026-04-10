@@ -31,4 +31,11 @@
       font-size: fluidPc(42);
     }
   }
+
+  &.headingH2--centered {
+    text-align: center;
+    &::before {
+      display: none;
+    }
+  }
 }

@@ -168,3 +168,157 @@
     margin-top: fluidPc(40);
   }
 }
+
+// Skills
+.skills {
+  background-color: var(--color-bg-light-blue);
+  @include pc() {
+    padding-top: fluidPc(80);
+    padding-bottom: fluidPc(80);
+  }
+}
+
+.skillsDescription {
+  text-align: center;
+  font-size: fluidSp(16);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-16);
+  font-family: var(--font-noto-sans-jp);
+  color: var(--color-text-black);
+  margin-top: fluidSp(20);
+  @include pc() {
+    font-size: fluidPc(17);
+    margin-top: fluidPc(30);
+  }
+}
+
+.skillsCategoryList {
+  display: grid;
+  gap: fluidSp(24);
+  margin-top: fluidSp(30);
+  @include pc() {
+    gap: fluidPc(28);
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: fluidPc(40);
+  }
+}
+
+.skillsCategoryItem {
+  background-color: var(--color-bg-white);
+  border-radius: fluidSp(16);
+  padding: fluidSp(20);
+  @include pc() {
+    border-radius: fluidPc(16);
+    padding: fluidPc(40);
+  }
+}
+
+.skillsCategoryIcon {
+  display: flex;
+  align-items: center;
+  gap: fluidSp(10);
+  padding-bottom: fluidSp(10);
+  border-bottom: fluidSp(1) solid var(--color-border-gray);
+  @include pc() {
+    padding-bottom: fluidPc(12);
+    gap: fluidPc(16);
+    border-bottom: fluidPc(1) solid var(--color-border-gray);
+  }
+}
+
+.skillsCategoryTitle {
+  font-size: fluidSp(18);
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-14);
+  font-family: var(--font-jost);
+  color: var(--color-text-black);
+
+  @include pc() {
+    font-size: fluidPc(24);
+  }
+}
+
+.skillsItemList {
+  margin-top: fluidSp(20);
+  @include pc() {
+    margin-top: fluidPc(30);
+  }
+}
+
+.skillsItem {
+  &:not(:first-child) {
+    margin-top: fluidSp(20);
+    @include pc() {
+      margin-top: fluidPc(20);
+    }
+  }
+}
+
+.skillsItemTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: fluidSp(10);
+  @include pc() {
+    gap: fluidPc(16);
+  }
+}
+
+.skillsItemName {
+  font-size: fluidSp(15);
+  font-weight: var(--font-weight-600);
+  line-height: var(--line-height-14);
+  font-family: var(--font-jost);
+  color: var(--color-text-black);
+  @include pc() {
+    font-size: fluidPc(16);
+  }
+}
+
+.skillsItemYear {
+  font-size: fluidSp(15);
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-14);
+  font-family: var(--font-noto-sans-jp);
+  color: var(--color-text-primary);
+  @include pc() {
+    font-size: fluidPc(16);
+  }
+}
+
+.skillsGauge {
+  position: relative;
+  margin-top: fluidSp(10);
+  height: fluidSp(10);
+  @include pc() {
+    margin-top: fluidPc(10);
+    height: fluidPc(10);
+  }
+}
+
+.skillsGaugeTrack {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(19, 27, 46, 0.12);
+}
+
+.skillsGaugeFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 999px;
+  background: var(--color-bg-primary);
+}
+
+.skillsItemDescription {
+  font-size: fluidSp(14);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-16);
+  font-family: var(--font-noto-sans-jp);
+  color: var(--color-text-black);
+  margin-top: fluidSp(10);
+  @include pc() {
+    font-size: fluidPc(15);
+    margin-top: fluidPc(10);
+  }
+}
