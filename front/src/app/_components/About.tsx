@@ -3,7 +3,7 @@ import Container from "@/components/element/container/Container";
 import HeadingH2 from "@/components/element/heading/h2/HeadingH2";
 export default function About() {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="about">
       <div className={styles.aboutContent}>
         <Container variant="top" className={styles.aboutContentContainer}>
           <HeadingH2 variant="en">ABOUT</HeadingH2>

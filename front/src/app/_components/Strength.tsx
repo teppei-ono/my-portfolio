@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Strength() {
   return (
-    <div className={styles.strength}>
+    <section className={styles.strength} id="strength">
       <Container variant="top">
         <HeadingH2>Strength</HeadingH2>
         <ul className={styles.strengthList}>
@@ -25,6 +25,6 @@ export default function Strength() {
           ))}
         </ul>
       </Container>
-    </div>
+    </section>
   );
 }

@@ -19,7 +19,7 @@ export const WORKS: MediaLinkProps[] = [
 
 export default function Works() {
   return (
-    <section className={styles.works}>
+    <section className={styles.works} id="works">
       <Container variant="top">
         <HeadingH2 variant="en">WORKS</HeadingH2>
         <ul className={styles.worksList}>

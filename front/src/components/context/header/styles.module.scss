@@ -4,6 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: fluidSp(50);
   z-index: 100;
 
   @include pc() {
@@ -22,17 +23,20 @@
 }
 
 .headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
   width: 100%;
   @include pc() {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: fluidPc(20);
   }
 }
 
 .headerLogoLink {
   display: block;
+  width: fluidSp(78);
+  height: fluidSp(21);
 
   @include pc() {
     width: fluidPc(130);
@@ -53,4 +57,133 @@
     font-family: var(--font-jost);
     color: var(--color-text-black);
   }
+}
+
+/* headerSp */
+
+.headerSpButton {
+  display: grid;
+  place-items: center;
+  font-size: 0;
+  width: fluidSp(40);
+  height: fluidSp(40);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% + fluidSp(4));
+    left: calc(50%);
+    transform: translate(-50%, -50%);
+    width: fluidSp(24);
+    height: fluidSp(2);
+    background-color: var(--color-bg-black);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - fluidSp(4));
+    left: calc(50%);
+    transform: translate(-50%, -50%);
+    width: fluidSp(24);
+    height: fluidSp(2);
+    background-color: var(--color-bg-black);
+  }
+}
+
+.headerSpDrawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: fluidSp(60) fluidSp(20) fluidSp(30);
+  background-color: var(--color-bg-white);
+  border-radius: fluidSp(10);
+  z-index: 100;
+  transform: translateX(100%);
+  transition-property: transform;
+  transition-duration: 600ms;
+  transition-timing-function: var(--spring-bouncy);
+  will-change: transform;
+}
+
+.headerSpDrawer.isOpen {
+  transform: translateX(0);
+}
+
+.headerSpNavItem {
+  border-top: fluidSp(1) solid var(--color-border-gray);
+  padding-top: fluidSp(15);
+  padding-left: fluidSp(5);
+  &:not(:first-child) {
+    margin-top: fluidSp(15);
+  }
+  &:last-child {
+    border-bottom: fluidSp(1) solid var(--color-border-gray);
+    padding-bottom: fluidSp(15);
+  }
+}
+
+.headerSpNavLink {
+  display: block;
+  font-size: fluidSp(16);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-14);
+  font-family: var(--font-jost);
+  color: var(--color-text-black);
+}
+
+.headerSpClose {
+  font-size: 0;
+  position: absolute;
+  top: fluidSp(10);
+  right: fluidSp(10);
+  width: fluidSp(28);
+  height: fluidSp(28);
+  background: url("/assets/images/common/icon_close.svg") no-repeat center center / contain;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* overlay */
+.headerSpOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms linear;
+}
+
+.headerSpOverlay.isOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* drawer */
+.headerSpDrawer {
+  position: fixed;
+  top: fluidSp(20);
+  left: 50%;
+  z-index: 1000;
+  width: calc(100% - fluidSp(30));
+  background: #fff;
+  transform: translateX(-50%) translateY(-120%);
+  will-change: transform;
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.22, 1.61, 0.36, 1); /* fallback */
+}
+
+@supports (transition-timing-function: linear(0, 1)) {
+  .headerSpDrawer {
+    transition-timing-function: var(--spring-bouncy);
+  }
+}
+
+.headerSpDrawer.isOpen {
+  transform: translateX(-50%) translateY(0);
 }

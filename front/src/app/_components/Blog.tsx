@@ -15,7 +15,7 @@ export const BlogPosts: MediaLinkProps[] = [
 
 export default function Blog() {
   return (
-    <div className={styles.blog}>
+    <section className={styles.blog} id="blog">
       <div className={styles.blogInner}>
         <Container variant="top">
           <HeadingH2>Blog</HeadingH2>
@@ -32,6 +32,6 @@ export default function Blog() {
       <div className={styles.blogVideo}>
         <video src="/assets/movies/movie_blog.mp4" autoPlay muted loop />
       </div>
-    </div>
+    </section>
   );
 }

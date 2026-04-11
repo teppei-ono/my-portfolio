@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Skills() {
   return (
-    <div className={styles.skills}>
+    <section className={styles.skills} id="skills">
 
       <Container variant="top">
         <HeadingH2 isCentered={true}>Skills</HeadingH2>
@@ -54,6 +54,6 @@ export default function Skills() {
           ))}
         </ul>
       </Container>
-    </div>
+    </section>
   );
 }
