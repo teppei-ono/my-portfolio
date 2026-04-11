@@ -11,7 +11,7 @@ export default function HeadingH2({ variant = "en", children, className, isCente
     .filter(Boolean)
     .join(" ");
   return (
-    <h2 className={headingH2Classes}>
+    <h2 className={headingH2Classes} data-io>
       {children}
     </h2>
   );

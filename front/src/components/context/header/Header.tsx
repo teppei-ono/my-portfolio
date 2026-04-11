@@ -1,12 +1,14 @@
 import ContainerWide from "@/components/variant/container/wide/ContainerWide";
 import HeaderPc from "./HeaderPc";
 import HeaderSp from "./HeaderSp";
+import HeaderScrollClass from "@/components/context/header/HeaderScrollClass";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
 export default function Header() {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-header>
+      <HeaderScrollClass />
       <ContainerWide variant="wide" className={styles.headerContainer}>
         <div className={styles.headerContent}>
           <a href="" className={styles.headerLogoLink}>

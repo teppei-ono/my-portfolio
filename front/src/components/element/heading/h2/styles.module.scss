@@ -3,10 +3,21 @@
   font-weight: var(--font-weight-700);
   line-height: var(--line-height-14);
   font-family: var(--font-family-noto-sans-jp);
+  width: fit-content;
   position: relative;
+  will-change: transform;
+  transform: translateX(-20%) translateY(20%) rotate(-10deg);
+  transition-property: transform, opacity;
+  transition-duration: 1500ms, 600ms;
+  transition-timing-function: var(--spring-bouncy), ease;
+  opacity: 0;
 
   @include pc() {
     font-size: fluidPc(24);
+  }
+  &:global(.isInview) {
+    transform: translateX(0);
+    opacity: 1;
   }
   &::before {
     content: "";
@@ -30,10 +41,13 @@
     @include pc() {
       font-size: fluidPc(42);
     }
+    &.isInview {
+      transform: translateX(0);
+    }
   }
 
   &.headingH2--centered {
-    text-align: center;
+    margin-inline: auto;
     &::before {
       display: none;
     }

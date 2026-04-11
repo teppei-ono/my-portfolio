@@ -4,6 +4,7 @@ import "destyle.css";
 import "@/styles/globals.scss";
 import Header from "@/components/context/header/Header";
 import Footer from "@/components/context/footer/Footer";
+import InViewInit from "@/components/context/Inview/InView";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -31,6 +32,7 @@ export default function RootLayout({
       className={`${notoSansJP.variable} ${jost.variable}antialiased`}
     >
       <body>
+        <InViewInit />
         <Header />
         {children}
         <Footer />

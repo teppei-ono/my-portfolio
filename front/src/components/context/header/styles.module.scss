@@ -6,12 +6,17 @@
   width: 100%;
   height: fluidSp(50);
   z-index: 100;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 
   @include pc() {
     display: flex;
     align-items: center;
     height: fluidPc(100);
     padding: fluidPc(20) 0;
+  }
+  &:global(.isScrolled) {
+    background-color: #FFFFFF80;
+    backdrop-filter: blur(10px);
   }
 }
 

@@ -11,8 +11,8 @@ export default function Strength() {
       <Container variant="top">
         <HeadingH2>Strength</HeadingH2>
         <ul className={styles.strengthList}>
-          {STRENGTH.map((strength) => (
-            <li key={strength.title} className={styles.strengthItem}>
+          {STRENGTH.map((strength, index) => (
+            <li key={strength.title} className={styles.strengthItem} data-io style={{ "transition-delay": `${index * 0.2}s` } as React.CSSProperties}>
               <div className={styles.strengthIcon}>
                 <Image src={strength.icon} alt={strength.title} width={48} height={48} />
               </div>

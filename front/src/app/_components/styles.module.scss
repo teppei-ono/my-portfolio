@@ -252,6 +252,15 @@
   background-color: var(--color-bg-white);
   border-radius: fluidSp(16);
   padding: fluidSp(20);
+  transform: translateX(-20%) translateY(20%) rotate(-10deg);
+  transition-property: transform, opacity;
+  transition-duration: 2000ms, 1000ms;
+  transition-timing-function: var(--spring-bouncy), ease;
+  opacity: 0;
+  &:global(.isInview) {
+    transform: translateX(0);
+    opacity: 1;
+  }
   @include pc() {
     border-radius: fluidPc(16);
     padding: fluidPc(40);
@@ -466,6 +475,15 @@
   background-color: var(--color-bg-light-blue);
   border-radius: fluidSp(8);
   padding: fluidSp(20);
+  transform: translateX(-20%) translateY(20%) rotate(-10deg);
+  transition-property: transform, opacity;
+  transition-duration: 2000ms, 1000ms;
+  transition-timing-function: var(--spring-bouncy), ease;
+  opacity: 0;
+  &:global(.isInview) {
+    transform: translateX(0);
+    opacity: 1;
+  }
   @include pc() {
     border-radius: fluidPc(8);
     padding: fluidPc(20) fluidPc(15) fluidPc(30);

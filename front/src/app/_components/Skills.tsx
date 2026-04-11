@@ -15,8 +15,8 @@ export default function Skills() {
           プロジェクトの規模や要件に応じた適切な技術選定と実装が可能です。
         </p>
         <ul className={styles.skillsCategoryList}>
-          {skills.map((category) => (
-            <li key={category.title} className={styles.skillsCategoryItem}>
+          {skills.map((category, index) => (
+            <li key={category.title} className={styles.skillsCategoryItem} data-io style={{ "transition-delay": `${index * 0.2}s` } as React.CSSProperties}>
               <div className={styles.skillsCategoryHeader}>
                 <div className={styles.skillsCategoryIcon}>
                   <Image
