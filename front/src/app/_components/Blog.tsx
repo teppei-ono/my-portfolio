@@ -18,7 +18,7 @@ export default function Blog() {
     <section className={styles.blog} id="blog">
       <div className={styles.blogInner}>
         <Container variant="top">
-          <HeadingH2>Blog</HeadingH2>
+          <HeadingH2>BLOG</HeadingH2>
           <p className={styles.blogDescription}>技術的なブログを投稿してます。日々の技術キャッチアップの内容をご確認ください。</p>
           <ul className={styles.blogList}>
             {BlogPosts.map((post) => (

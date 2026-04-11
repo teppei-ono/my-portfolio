@@ -7,7 +7,7 @@
   background-color: var(--color-bg-white);
   border: fluidSp(1) solid var(--color-border-primary);
   color: var(--color-text-primary);
-  font-size: fluidSp(11);
+  font-size: fluidSp(12);
   font-weight: var(--font-weight-500);
   font-family: var(--font-family-noto-sans-jp);
   line-height: 1;
@@ -16,23 +16,23 @@
     padding: fluidPc(4) fluidPc(22) fluidPc(5);
     border-radius: fluidPc(18);
     border: fluidPc(1) solid var(--color-border-primary);
-    font-size: fluidPc(10);
+    font-size: fluidPc(11);
   }
 
   &.sm {
-    font-size: fluidPc(11);
+    font-size: fluidSp(11);
     @include pc() {
       font-size: fluidPc(11);
     }
   }
   &.md {
-    font-size: fluidPc(12);
+    font-size: fluidSp(12);
     @include pc() {
       font-size: fluidPc(12);
     }
   }
   &.lg {
-    font-size: fluidPc(13);
+    font-size: fluidSp(13);
     @include pc() {
       font-size: fluidPc(13);
     }

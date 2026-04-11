@@ -103,7 +103,7 @@
   z-index: 100;
   transform: translateX(100%);
   transition-property: transform;
-  transition-duration: 600ms;
+  transition-duration: 1s;
   transition-timing-function: var(--spring-bouncy);
   will-change: transform;
 }
@@ -155,7 +155,7 @@
   background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 200ms linear;
+  transition: opacity 500ms ease;
 }
 
 .headerSpOverlay.isOpen {

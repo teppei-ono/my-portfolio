@@ -1,8 +1,11 @@
 // Hero
 .hero {
+  padding-top: fluidSp(60);
+  padding-bottom: fluidSp(70);
   @include pc() {
     height: fluidPc(540);
     padding-top: fluidPc(70);
+    padding-bottom: fluidPc(80);
   }
 }
 
@@ -14,7 +17,7 @@
 }
 
 .heroTitle {
-  font-size: fluidSp(24);
+  font-size: fluidSp(42);
   font-weight: var(--font-weight-700);
   line-height: var(--line-height-14);
   font-family: var(--font-jost);
@@ -26,12 +29,12 @@
 }
 
 .heroSubtitle {
-  font-size: fluidSp(18);
+  font-size: fluidSp(20);
   font-weight: var(--font-weight-700);
   line-height: var(--line-height-14);
   font-family: var(--font-noto-sans-jp);
   color: var(--color-text-primary);
-  margin-top: fluidSp(10);
+  margin-top: fluidSp(30);
 
   @include pc() {
     font-size: fluidPc(24);
@@ -45,7 +48,7 @@
   line-height: var(--line-height-16);
   font-family: var(--font-noto-sans-jp);
   color: var(--color-text-black);
-  margin-top: fluidSp(10);
+  margin-top: fluidSp(15);
 
   @include pc() {
     font-size: fluidPc(18);
@@ -54,8 +57,16 @@
 }
 
 .heroButtonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: fluidSp(20);
+  margin-top: fluidSp(30);
   @include pc() {
-    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     gap: fluidPc(20);
     margin-top: fluidPc(40);
   }
@@ -73,6 +84,8 @@
 }
 
 .aboutContent {
+  padding-top: fluidSp(50);
+  padding-bottom: fluidSp(80);
   @include pc() {
     position: relative;
     z-index: 1;
@@ -83,14 +96,15 @@
     content: "";
     position: absolute;
     inset: 0;
-    width: 70%;
+    width: 100%;
     height: 100%;
     pointer-events: none;
     // 背景をぼかす（Figma blur=35 相当）
-    backdrop-filter: blur(2em);
-    filter: blur(2em);
+    backdrop-filter: blur(5);
     // ブラーの効き具合を左→右でフェードアウト（1→0）
-    mask-image: linear-gradient(
+    @include pc() {
+      width: 70%;
+      mask-image: linear-gradient(
       to right,
       rgb(255 255 255 / 100%) 0%,
       rgb(255 255 255 / 95%) 10%,
@@ -101,18 +115,26 @@
       rgb(255 255 255 / 4%) 80%,
       rgb(255 255 255 / 0%) 100%
     );
+    }
   }
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    width: 70%;
+    width: 100%;
     height: 100%;
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    /* 0%: #fff 100% → 100%: #fff 0% */
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: #FFFFFF70;
+    @include pc() {
+      height: 100%;
+      width: 70%;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      /* 0%: #fff 100% → 100%: #fff 0% */
+      background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    }
+    
+    
   }
 }
 
@@ -124,7 +146,7 @@
 .aboutContentText {
   font-size: fluidSp(16);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-20);
+  line-height: var(--line-height-18);
   font-family: var(--font-noto-sans-jp);
   color: var(--color-text-black);
   margin-top: fluidSp(30);
@@ -147,10 +169,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: right center;
 }
 
 // Works
 .works {
+  padding-top: fluidSp(50);
+  padding-bottom: fluidSp(70);
   @include pc() {
     padding-top: fluidPc(80);
     padding-bottom: fluidPc(80);
@@ -172,6 +197,8 @@
 // Skills
 .skills {
   background-color: var(--color-bg-light-blue);
+  padding-top: fluidSp(50);
+  padding-bottom: fluidSp(70);
   @include pc() {
     padding-top: fluidPc(80);
     padding-bottom: fluidPc(80);
@@ -325,6 +352,8 @@
 
 // Blog
 .blog {
+  padding-top: fluidSp(50);
+  padding-bottom: fluidSp(70);
   position: relative;
   @include pc() {
     padding-top: fluidPc(80);
@@ -394,6 +423,8 @@
 
 // Strength
 .strength {
+  padding-top: fluidSp(50);
+  padding-bottom: fluidSp(100);
   position: relative;
   @include pc() {
     padding-top: fluidPc(80);
