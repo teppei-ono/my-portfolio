@@ -1,6 +1,8 @@
 import styles from "./styles.module.scss";
 import Container from "@/components/element/container/Container";
 import HeadingH2 from "@/components/element/heading/h2/HeadingH2";
+import AboutMovieParallax from "./AboutMovieParallax";
+
 export default function About() {
   return (
     <section className={styles.about} id="about">
@@ -24,9 +26,7 @@ export default function About() {
           </p>
         </Container>
       </div>
-      <div className={styles.aboutMovie}>
-        <video src="/assets/movies/movie_about.mp4" autoPlay muted loop playsInline className={styles.aboutMovieVideo}></video>
-      </div>
+      <AboutMovieParallax />
     </section>
   );
 }

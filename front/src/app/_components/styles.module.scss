@@ -2,14 +2,26 @@
 .hero {
   padding-top: fluidSp(60);
   padding-bottom: fluidSp(70);
+  position: relative;
+  overflow: hidden;
   @include pc() {
-    height: fluidPc(540);
-    padding-top: fluidPc(70);
-    padding-bottom: fluidPc(80);
+    padding-top: fluidPc(170);
+    padding-bottom: fluidPc(130);
   }
 }
 
+.heroShaderBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .heroContent {
+  position: relative;
+  z-index: 1;
   @include pc() {
     display: grid;
     place-items: center;
@@ -163,6 +175,12 @@
   width: 100%;
   height: 100%;
   z-index: -1;
+  overflow: hidden;
+}
+
+.aboutMovieVideo {
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1.08);
 }
 
 .aboutMovieVideo {

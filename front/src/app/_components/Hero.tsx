@@ -1,11 +1,13 @@
 import styles from "./styles.module.scss";
 import Container from "@/components/element/container/Container";
 import LinkButton from "@/components/element/linkButton/Button";
+import HeroShaderBackground from "./HeroShaderBackground";
 import { ROUTES } from "@/data/routes";
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      <HeroShaderBackground className={styles.heroShaderBg} />
       <div className={styles.heroContent}>
         <Container variant="wide">
           <div className={styles.heroContentInner}>
@@ -21,7 +23,6 @@ export default function Hero() {
             </div>
           </div>
         </Container>
-        
       </div>
     </section>
   );

@@ -80,7 +80,7 @@ export const skills = [
   {
     icon: "/assets/images/icon_infra.svg",
     iconHeight: 25,
-    iconWidth: 20,
+    iconWidth: 25,
     title: "インフラ / DevOps",
     items: [
       {
@@ -104,9 +104,9 @@ export const skills = [
     ],
   },
   {
-    icon: "/assets/images/icon_version_control.svg",
-    iconHeight: 25,
-    iconWidth: 20,
+    icon: "/assets/images/icon_commit.svg",
+    iconHeight: 36,
+    iconWidth: 36,
     title: "バージョン管理",
     items: [
       {
@@ -126,7 +126,7 @@ export const skills = [
   {
     icon: "/assets/images/icon_design.svg",
     iconHeight: 25,
-    iconWidth: 20,
+    iconWidth: 15,
     title: "デザイン・ツール",
     items: [
       {

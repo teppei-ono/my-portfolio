@@ -8,13 +8,13 @@ import ContentsWrapper from "@/components/context/contentsWrapper/ContentsWrappe
 
 export default function Home() {
   return (
-    <ContentsWrapper>
+    <>
       <Hero />
       <About />
       <Works />
       <Skills />
       <Blog />
       <Strength />
-    </ContentsWrapper>
+    </>
   );
 }
