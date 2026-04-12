@@ -16,8 +16,8 @@ export default defineConfig({
 	integrations: [
 		react(),
 		emdash({
-			database: d1({ binding: "DB", session: "auto" }),
-			storage: r2({ binding: "MEDIA" }),
+			database: d1({ binding: "portfolio_db" }),
+			storage: r2({ binding: "portfolio_bucket" }),
 			plugins: [formsPlugin()],
 			sandboxed: [webhookNotifierPlugin()],
 			sandboxRunner: sandbox(),

@@ -1,22 +1,31 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "my-emdash-site",
+	"name": "my-portfolio-site",
 	"main": "./src/worker.ts",
 	"compatibility_date": "2026-03-29",
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
+	"assets": {
+		"directory": "./dist"
+	},
 	"d1_databases": [
 		{
-			"binding": "DB",
-			"database_name": "my-emdash-site",
-			// Run `wrangler d1 create my-emdash-site` and paste the ID here
+			"binding": "portfolio_db",
+			"database_name": "portfolio-db",
+			"database_id": "75fa2a0b-8cbe-4fc5-8a81-aa2c98654d66"
 		},
 	],
 	"r2_buckets": [
 		{
-			"binding": "MEDIA",
-			"bucket_name": "my-emdash-media",
+			"bucket_name": "portfolio-bucket",
+			"binding": "portfolio_bucket"
+		},
+	],
+	"kv_namespaces": [
+		{
+			"binding": "SESSION",
+			"id": "46d21156b97f4b599876ff89125a5044"
 		},
 	],
 	"observability": {
