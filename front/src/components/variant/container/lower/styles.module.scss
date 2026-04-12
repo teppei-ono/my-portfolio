@@ -1,0 +1,13 @@
+.containerLower {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: fluidSp(15);
+  padding-right: fluidSp(15);
+
+  @include pc() {
+    max-width: fluidPc(1120);
+    padding-left: fluidPc(60);
+    padding-right: fluidPc(60);
+    margin-inline: auto;
+  }
+}

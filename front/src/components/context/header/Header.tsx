@@ -5,7 +5,12 @@ import HeaderScrollClass from "@/components/context/header/HeaderScrollClass";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
-export default function Header() {
+type HeaderNavItem = { label: string; href: string };
+type Props = {
+  navList: HeaderNavItem[];
+};
+
+export default function Header({ navList }: Props) {
   return (
     <header className={styles.header} data-header>
       <HeaderScrollClass />
@@ -14,8 +19,8 @@ export default function Header() {
           <a href="" className={styles.headerLogoLink}>
             <Image src="/assets//images/common/img_logo.svg" alt="logo" width={130} height={42} loading="eager" />
           </a>
-          <HeaderPc />
-          <HeaderSp />
+          <HeaderPc navList={navList} />
+          <HeaderSp navList={navList} />
         </div>
       </ContainerWide>
     </header>

@@ -6,11 +6,13 @@ import { usePathname } from "next/navigation";
 import { HEADER_LOWER_NAV_LIST, HEADER_TOP_NAV_LIST } from "@/constants/header";
 import styles from "./styles.module.scss";
 
-export default function HeaderSp() {
+type HeaderNavItem = { label: string; href: string };
+type Props = {
+  navList: HeaderNavItem[];
+};
+
+export default function HeaderSp({ navList }: Props) {
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
-  const isTop = pathname === "/";
-  const navList = isTop ? HEADER_TOP_NAV_LIST : HEADER_LOWER_NAV_LIST;
 
   const drawerId = useId();
 

@@ -34,11 +34,11 @@ export const HEADER_LOWER_NAV_LIST = [
   },
   {
     label: "WORKS",
-    href: `${ROUTES.HOME}${ROUTES.WORKS}`,
+    href:  `${ROUTES.HOME}${ROUTES.WORKSTOP}`,
   },
   {
     label: "BLOG",
-    href: ROUTES.BLOG,
+    href: `${ROUTES.HOME}${ROUTES.TOPBLOG}`,
   },
   {
     label: "STRENGTH",

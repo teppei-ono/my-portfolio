@@ -5,7 +5,7 @@ import "@/styles/globals.scss";
 import Header from "@/components/context/header/Header";
 import Footer from "@/components/context/footer/Footer";
 import InViewInit from "@/components/context/Inview/InView";
-import { HEADER_TOP_NAV_LIST } from "@/constants/header";
+import { HEADER_LOWER_NAV_LIST } from "@/constants/header";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -34,7 +34,7 @@ export default function RootLayout({
     >
       <body>
         <InViewInit />
-        <Header navList={HEADER_TOP_NAV_LIST} />
+        <Header navList={HEADER_LOWER_NAV_LIST} />
           {children}
         <Footer />
       </body>

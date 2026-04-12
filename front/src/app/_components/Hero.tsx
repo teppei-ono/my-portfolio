@@ -18,7 +18,7 @@ export default function Hero() {
               チームマネジメントと保守性・可読性・拡張性の高いプロダクトを構築します。
             </p>
             <div className={styles.heroButtonWrapper}>
-              <LinkButton href={ROUTES.WORKS} variant="primary" className={styles.heroButton}>WORKSを見る</LinkButton>
+              <LinkButton href={ROUTES.WORKSTOP} variant="primary" className={styles.heroButton}>WORKSを見る</LinkButton>
               <LinkButton href="https://github.com/teppei-ono" variant="secondary" className={styles.heroButton}>GitHubを見る</LinkButton>
             </div>
           </div>

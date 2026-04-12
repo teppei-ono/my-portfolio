@@ -5,7 +5,7 @@ export default function ContainerLower({ className, children, variant, ...rest }
   return (
     <div
       {...rest}
-      className={[styles.root, className].filter(Boolean).join(" ")}
+      className={[styles.containerLower, className].filter(Boolean).join(" ")}
     >
       {children}
     </div>

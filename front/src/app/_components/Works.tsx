@@ -6,7 +6,7 @@ import type { MediaLinkProps } from "@/components/element/mediaLink/types";
 
 export const WORKS: MediaLinkProps[] = [
   {
-    href: "/blog/",
+    href: "https://honeygo821.com/",
     imageSrc: "/assets/images/img_works_01.png",
     imageAlt: "作品のサムネイル",
     labels: [

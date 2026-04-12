@@ -3,17 +3,15 @@ import Container from "@/components/element/container/Container";
 import HeadingH2 from "@/components/element/heading/h2/HeadingH2";
 import type { MediaLinkProps } from "@/components/element/mediaLink/types";
 import MediaLink from "@/components/element/mediaLink/MediaLink";
+import { Blogs } from "@/types/microcms";
 
-export const BlogPosts: MediaLinkProps[] = [
-  {
-    href: "/blog/",
-    imageSrc: "/assets/images/img_works_01.png",
-    imageAlt: "ホゲホゲについて",
-    title: <>ホゲホゲについて</>,
-  },
-];
-
-export default function Blog() {
+export default function Blog({ BlogList }: { BlogList: Blogs[] }) {
+  const blogPosts: MediaLinkProps[] = BlogList.map((b) => ({
+    href: `/blog/${b.id}`,
+    imageSrc: b.thumbnail?.url ?? "/assets/images/img_works_01.png",
+    imageAlt: b.title,
+    title: b.title,
+  }));
   return (
     <section className={styles.blog} id="blog">
       <div className={styles.blogInner}>
@@ -21,7 +19,7 @@ export default function Blog() {
           <HeadingH2>BLOG</HeadingH2>
           <p className={styles.blogDescription}>技術的なブログを投稿してます。日々の技術キャッチアップの内容をご確認ください。</p>
           <ul className={styles.blogList}>
-            {BlogPosts.map((post) => (
+            {blogPosts.map((post) => (
               <li key={post.href}>
                 <MediaLink {...post} />
               </li>
