@@ -57,7 +57,11 @@ jobs:
       - name: Deploy to production
         if: github.ref == 'refs/heads/main'
         uses: cloudflare/wrangler-action@v3
+        env:
+          NPM_CONFIG_YES: true
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: front
+          wranglerVersion: "4.82.0"
           command: deploy --env production
