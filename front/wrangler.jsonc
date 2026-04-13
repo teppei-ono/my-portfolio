@@ -1,0 +1,22 @@
+// wrangler.jsonc
+{
+  "name": "honeygo821",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-04-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    // Cloudflare Account ID（ダッシュボード右下「Account ID」）
+    "CF_ACCOUNT_ID": "520aaab5f6d37af972981fcf39794be5"
+  },
+  "env": {
+    "production": {
+      "route": "ommlet-web-portfolio.com/*",
+      "custom_domain": true,
+      "vars": { "ENVIRONMENT": "production" }
+    }
+  }
+}
