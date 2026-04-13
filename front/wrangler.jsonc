@@ -1,7 +1,7 @@
 // wrangler.jsonc
 {
   "name": "ommlet-web-portfolio",
-  "main": "front/src/worker/index.ts",
+  // "main": "front/src/worker/index.ts",
   "compatibility_date": "2026-04-13",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
