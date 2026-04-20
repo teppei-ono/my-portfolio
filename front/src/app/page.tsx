@@ -10,8 +10,6 @@ import { Blogs } from "@/types/microcms";
 export default async function Home() {
   const { BlogList } = await getData();
 
-  console.log('BlogList', BlogList);
-
   return (
     <>
       <Hero />

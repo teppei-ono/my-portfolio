@@ -16,7 +16,7 @@ export default function Header({ navList }: Props) {
       <HeaderScrollClass />
       <ContainerWide variant="wide" className={styles.headerContainer}>
         <div className={styles.headerContent}>
-          <a href="" className={styles.headerLogoLink}>
+          <a href="/" className={styles.headerLogoLink}>
             <Image src="/assets//images/common/img_logo.svg" alt="logo" width={130} height={42} loading="eager" />
           </a>
           <HeaderPc navList={navList} />
